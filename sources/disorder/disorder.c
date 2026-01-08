@@ -6,30 +6,30 @@
 /*   By: eel-kerc <eel-kerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 12:50:35 by eel-kerc          #+#    #+#             */
-/*   Updated: 2026/01/07 15:55:15 by eel-kerc         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:49:21 by eel-kerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // calculate disorder by checking if each pair is in the right order
-float	disorder(t_stack *stack_a)
+float	disorder(t_node *stack_a)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_node	*first;
+	t_node	*second;
 	int	mistake;
 
 	first = stack_a;
 	second = stack_a->next;
 	mistake = 0;
-	while (second->rank != 0)
+	while (second->index != 0)
 	{
 		if (first->value > second->value)
 			mistake++;
 		first = first->next;
 		second = second->next;
 	}
-	if (first->rank == second->rank)
+	if (first->index == second->index)
 		return (0);
-	return (mistake / (first->rank));
+	return (mistake / (first->index));
 }
