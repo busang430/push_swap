@@ -6,57 +6,62 @@
 /*   By: eel-kerc <eel-kerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:00:15 by eel-kerc          #+#    #+#             */
-/*   Updated: 2026/01/08 14:39:50 by eel-kerc         ###   ########.fr       */
+/*   Updated: 2026/01/09 14:06:44 by eel-kerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	push_index(t_node *stack)
-{
-	
-}
-
 // might work but the rank is wrong because of the position change
-void	pa(t_node *stack_a, t_node *stack_b)
+void	pa(t_stacks *stacks)
 {
 	t_node	*tmp_prev;
 	t_node *tmp_next;
-	if (!stack_b)
+	if (!stacks->stack_b)
 		return ;
-	while (stack_a->index != 0)
-		stack_a = stack_a->next;
-	while (stack_b->index != 0)
-		stack_b = stack_b->next;
-	tmp_prev = stack_b->prev;
-	tmp_next = stack_b->next;
-	stack_b->prev = stack_a->prev;
-	stack_b->next = stack_a;
-	stack_a->prev = stack_b;
-	(stack_b->prev)->next = stack_b;
+	while (stacks->index_a % stacks->size_a != 0)
+	{
+		stacks->stack_a = (stacks->stack_a)->prev;
+		stacks->index_a--;
+	}
+	while (stacks->index_b % stacks->size_b != 0)
+	{
+		stacks->stack_b = (stacks->stack_b)->prev;
+		stacks->index_b--;
+	}
+	tmp_prev = (stacks->stack_b)->prev;
+	tmp_next = (stacks->stack_b)->next;
+	(stacks->stack_b)->prev = (stacks->stack_a)->prev;
+	(stacks->stack_b)->next = stacks->stack_a;
+	(stacks->stack_a)->prev = stacks->stack_b;
+	((stacks->stack_b)->prev)->next = stacks->stack_b;
 	tmp_prev->next = tmp_next;
-	tmp_next->prev = tmp_prev;
-	push_index(stack_a);
+	tmp_next->prev = tmp_prev; 
 }
 
 // same problem, might need a third function to init rank
-void	pb(t_node *stack_a, t_node *stack_b)
+void	pb(t_stacks *stacks)
 {
 	t_node	*tmp_prev;
 	t_node *tmp_next;
-	if (!stack_a)
+	if (!stacks->stack_a)
 		return ;
-	while (stack_b->index != 0)
-		stack_b = stack_b->next;
-	while (stack_a->index != 0)
-		stack_a = stack_a->next;
-	tmp_prev = stack_a->prev;
-	tmp_next = stack_a->next;
-	stack_a->prev = stack_b->prev;
-	stack_a->next = stack_b;
-	stack_b->prev = stack_a;
-	(stack_a->prev)->next = stack_a;
+	while (stacks->index_b % stacks->size_b != 0)
+	{
+		stacks->stack_b = (stacks->stack_b)->prev;
+		stacks->index_b--;
+	}
+	while (stacks->index_a % stacks->size_a != 0)
+	{
+		stacks->stack_a = (stacks->stack_a)->prev;
+		stacks->index_a--;
+	}
+	tmp_prev = (stacks->stack_a)->prev;
+	tmp_next = (stacks->stack_a)->next;
+	(stacks->stack_a)->prev = (stacks->stack_b)->prev;
+	(stacks->stack_a)->next = stacks->stack_b;
+	(stacks->stack_b)->prev = stacks->stack_a;
+	((stacks->stack_a)->prev)->next = stacks->stack_a;
 	tmp_prev->next = tmp_next;
-	tmp_next->prev = tmp_prev;
-	push_index(stack_b);
+	tmp_next->prev = tmp_prev; 
 }
