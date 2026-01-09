@@ -6,7 +6,7 @@
 /*   By: zqian <zqian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 10:38:28 by zqian             #+#    #+#             */
-/*   Updated: 2026/01/08 10:38:33 by zqian            ###   ########.fr       */
+/*   Updated: 2026/01/09 12:01:08 by zqian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_stacks
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
+	int		index_a;
+	int		index_b;
 	int		size_a;
 	int		size_b;
 }	t_stacks;
