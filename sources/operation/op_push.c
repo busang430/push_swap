@@ -6,11 +6,16 @@
 /*   By: eel-kerc <eel-kerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:00:15 by eel-kerc          #+#    #+#             */
-/*   Updated: 2026/01/08 13:44:14 by eel-kerc         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:39:50 by eel-kerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	push_index(t_node *stack)
+{
+	
+}
 
 // might work but the rank is wrong because of the position change
 void	pa(t_node *stack_a, t_node *stack_b)
@@ -31,6 +36,7 @@ void	pa(t_node *stack_a, t_node *stack_b)
 	(stack_b->prev)->next = stack_b;
 	tmp_prev->next = tmp_next;
 	tmp_next->prev = tmp_prev;
+	push_index(stack_a);
 }
 
 // same problem, might need a third function to init rank
@@ -52,4 +58,5 @@ void	pb(t_node *stack_a, t_node *stack_b)
 	(stack_a->prev)->next = stack_a;
 	tmp_prev->next = tmp_next;
 	tmp_next->prev = tmp_prev;
+	push_index(stack_b);
 }
