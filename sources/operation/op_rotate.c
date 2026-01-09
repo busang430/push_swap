@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eel-kerc <eel-kerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zqian <zqian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:42:19 by eel-kerc          #+#    #+#             */
-/*   Updated: 2026/01/09 13:54:03 by eel-kerc         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:15:38 by zqian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-//I might do a while rank != 0, and do a swap call each time because we only need to modify values
+//I might do a while rank != 0, and do a swap call each time because 
+//we only need to modify values
 void	ra(t_stacks *stacks)
 {
 	int	i;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eel-kerc <eel-kerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zqian <zqian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:39:00 by eel-kerc          #+#    #+#             */
-/*   Updated: 2026/01/09 14:12:46 by eel-kerc         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:16:01 by zqian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	sa(t_stacks *stacks)
 {
 	int	tmp;
-	
+
 	if (!stacks->stack_a || stacks->stack_a == (stacks->stack_a)->next)
 		return ;
 	while (stacks->index_a % stacks->size_a != 0)
@@ -33,7 +33,7 @@ void	sa(t_stacks *stacks)
 void	sb(t_stacks *stacks)
 {
 	int	tmp;
-	
+
 	if (!stacks->stack_b || stacks->stack_b == (stacks->stack_b)->next)
 		return ;
 	while (stacks->index_b % stacks->size_b != 0)

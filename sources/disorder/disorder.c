@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eel-kerc <eel-kerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zqian <zqian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 12:50:35 by eel-kerc          #+#    #+#             */
-/*   Updated: 2026/01/08 13:49:21 by eel-kerc         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:14:09 by zqian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ float	disorder(t_node *stack_a)
 {
 	t_node	*first;
 	t_node	*second;
-	int	mistake;
+	int		mistake;
 
 	first = stack_a;
 	second = stack_a->next;

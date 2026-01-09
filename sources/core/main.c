@@ -6,7 +6,7 @@
 /*   By: zqian <zqian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 10:38:51 by zqian             #+#    #+#             */
-/*   Updated: 2026/01/09 12:01:01 by zqian            ###   ########.fr       */
+/*   Updated: 2026/01/09 16:25:36 by zqian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int argc, char **argv)
 
 	stacks.stack_a = NULL;
 	stacks.stack_b = NULL;
+	stacks.index_a = 0;
+	stacks.index_b = 0;
 	stacks.size_a = 0;
 	stacks.size_b = 0;
 	if (argc < 2)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eel-kerc <eel-kerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zqian <zqian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:00:15 by eel-kerc          #+#    #+#             */
-/*   Updated: 2026/01/09 14:06:44 by eel-kerc         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:15:19 by zqian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 void	pa(t_stacks *stacks)
 {
 	t_node	*tmp_prev;
-	t_node *tmp_next;
+	t_node	*tmp_next;
+
 	if (!stacks->stack_b)
 		return ;
 	while (stacks->index_a % stacks->size_a != 0)
@@ -36,14 +37,15 @@ void	pa(t_stacks *stacks)
 	(stacks->stack_a)->prev = stacks->stack_b;
 	((stacks->stack_b)->prev)->next = stacks->stack_b;
 	tmp_prev->next = tmp_next;
-	tmp_next->prev = tmp_prev; 
+	tmp_next->prev = tmp_prev;
 }
 
 // same problem, might need a third function to init rank
 void	pb(t_stacks *stacks)
 {
 	t_node	*tmp_prev;
-	t_node *tmp_next;
+	t_node	*tmp_next;
+
 	if (!stacks->stack_a)
 		return ;
 	while (stacks->index_b % stacks->size_b != 0)
@@ -63,5 +65,5 @@ void	pb(t_stacks *stacks)
 	(stacks->stack_b)->prev = stacks->stack_a;
 	((stacks->stack_a)->prev)->next = stacks->stack_a;
 	tmp_prev->next = tmp_next;
-	tmp_next->prev = tmp_prev; 
+	tmp_next->prev = tmp_prev;
 }
